@@ -22,3 +22,11 @@ image::doc/images/rhheader.png[width=900]
 cd $JBOSS_HOME
 ./bin/standalone.sh --server-config=standalone-full.xml
 -----
+
+==== Build and Deploy
+
+----
+cd hornetqDiagnostics
+mvn clean install -DskipTests
+cp mdb/target/mdb-1.0.jar $JBOSS_HOME/standalone/deployments
+----

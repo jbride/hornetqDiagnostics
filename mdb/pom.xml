@@ -6,6 +6,25 @@
   <artifactId>mdb</artifactId>
   <version>1.0</version>
 
+  <properties>
+    <version.slf4j>1.7.2</version.slf4j>
+  </properties>
+
   <dependencies>
+    <dependency>
+      <groupId>org.jboss.spec.javax.jms</groupId>
+      <artifactId>jboss-jms-api_1.1_spec</artifactId>
+      <version>1.0.1.Final-redhat-2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.spec.javax.ejb</groupId>
+      <artifactId>jboss-ejb-api_3.1_spec</artifactId>
+      <version>1.0.2.Final-redhat-2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>${version.slf4j}</version>
+    </dependency>
   </dependencies>
 </project>
