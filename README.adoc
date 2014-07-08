@@ -1,0 +1,24 @@
+:data-uri:
+:toc2:
+
+image::doc/images/rhheader.png[width=900]
+
+== Setup
+
+=== JBoss EAP
+
+==== configuration
+
+. messaging subsystem changes
+.. *disable security:*
+<security-enabled>false</security-enabled>
+.. *enable message counter:* 
+<message-counter-enabled>true</message-counter-enabled>
+
+
+==== Start-up
+
+-----
+cd $JBOSS_HOME
+./bin/standalone.sh --server-config=standalone-full.xml
+-----
