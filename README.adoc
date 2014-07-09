@@ -18,9 +18,22 @@ image::doc/images/rhheader.png[width=900]
 
 ==== Start-up
 
+. *broker1*
++
 -----
-cd $JBOSS_HOME
-./bin/standalone.sh --server-config=standalone-full.xml
+./bin/standalone.sh --server-config=standalone-full.xml -b=$HOSTNAME -bmanagement=$HOSTNAME
+-----
+
+. *node1*
++
+-----
+./bin/standalone.sh -b=$HOSTNAME -bmanagement=$HOSTNAME --server-config=standalone-full.xml -Djboss.socket.binding.port-offset=100 -Djboss.server.base.dir=standalone-node1 -Djboss.node.name=node1
+-----
+
+. *node2*
++
+-----
+./bin/standalone.sh -b=$HOSTNAME -bmanagement=$HOSTNAME --server-config=standalone-full.xml -Djboss.socket.binding.port-offset=200 -Djboss.server.base.dir=standalone-node2 -Djboss.node.name=node2
 -----
 
 ==== Build and Deploy
@@ -28,5 +41,5 @@ cd $JBOSS_HOME
 ----
 cd hornetqDiagnostics
 mvn clean install -DskipTests
-cp mdb/target/mdb-1.0.jar $JBOSS_HOME/standalone/deployments
+cp mdb/target/mdb-1.0.jar $JBOSS_HOME/standalone-node1/deployments
 ----
