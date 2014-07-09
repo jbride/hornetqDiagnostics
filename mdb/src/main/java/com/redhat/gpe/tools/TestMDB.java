@@ -15,7 +15,7 @@ import javax.jms.BytesMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@MessageDriven(name = "LabMDB", activationConfig = {
+@MessageDriven(name = "TestMDB", activationConfig = {
     @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
     @ActivationConfigProperty(propertyName = "destination", propertyValue = "jms/queue/GPE.SEND"),
     @ActivationConfigProperty(propertyName = "maxSession", propertyValue = "1")
@@ -24,7 +24,7 @@ public class TestMDB implements MessageListener {
 
     public final static String SLEEP_TIME_MILLIS = "SLEEP_TIME_MILLIS";
 
-    private Logger log = LoggerFactory.getLogger("LabMDB");
+    private Logger log = LoggerFactory.getLogger("TestMDB");
     private int sleepTime = 0;
 
     public TestMDB() {
